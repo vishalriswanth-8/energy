@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import mysql.connector
+from flask_cors import CORS
 
+CORS(app, origins=["https://energydata.netlify.app"])
 app = Flask(__name__)
 
 # Database configuration
