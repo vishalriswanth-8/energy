@@ -18,7 +18,8 @@ def get_data():
     try:
         connection = mysql.connector.connect(**db_config)
         cursor = connection.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM sensor_data")  # Replace "sensor_data" with your table name
+        
+        cursor.execute("SELECT * FROM meter_data")# Replace "sensor_data" with your table name
         result = cursor.fetchall()
         connection.close()
         return jsonify(result)
